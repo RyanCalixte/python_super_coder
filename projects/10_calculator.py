@@ -1,31 +1,41 @@
-logo = """
+from calculator_art import logo
 
-_____________________
+print(logo)
+print("Welcome to the calculator!")
 
-|  _________________  |
+def NewCalculation():
+    Calculation = 0
+    Samecalc = False
+    while True:
+        if Samecalc is True:
+            FirstNumber = Calculation
+        else:
+            FirstNumber = int(input("What's the first number?: "))
 
-| | Pythonista   0. | |  .----------------.  .----------------.  .----------------.  .----------------.
+        Operaters = ["+", "-", "*", "/"]
+        for i in range(4):
+            print(Operaters[i])
 
-| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+        Operation = input("Pick an operation: ")
+        SecondNumber = int(input("What's the second number?: "))
+        if Operation == "+":
+            Calculation = FirstNumber + SecondNumber
+            print(f"{FirstNumber} + {SecondNumber} = {Calculation}")
+        elif Operation == "-":
+            Calculation = FirstNumber - SecondNumber
+            print(f"{FirstNumber} - {SecondNumber} = {Calculation}")
+        elif Operation == "*":
+            Calculation = FirstNumber * SecondNumber
+            print(f"{FirstNumber} * {SecondNumber} = {Calculation}")
+        elif Operation == "/":
+            Calculation = FirstNumber / SecondNumber
+            print(f"{FirstNumber} / {SecondNumber} = {Calculation}")
 
-|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+        SameNumberQuestion = input(f"Type 'y' to continue calculation with {Calculation}, or type 'n' to start a new calculation: ")
+        if SameNumberQuestion == "y":
+            Samecalc = True
+        if SameNumberQuestion == "n":
+            Samecalc = False
 
-| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+NewCalculation()
 
-| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
-
-| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
-
-| |___|___|___| |___| | | |  \ `.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ `.___.'\  | |
-
-| | 1 | 2 | 3 | | x | | | |   `._____.'  | || ||____|  |____|| || |  |________|  | || |   `._____.'  | |
-
-| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
-
-| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
-
-| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------'
-
-|_____________________|
-
-"""
